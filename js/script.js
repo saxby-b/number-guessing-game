@@ -1,8 +1,25 @@
 var response = document.querySelector(".response");
 var showGuess = document.querySelector(".show-guess");
-var num = Number(prompt("Guess a number between 1-26. :)"));
+//var num = Number(prompt("Guess a number between 1-26. :)")); */
+const button = document.querySelector("button");
+const number = document.querySelector(".number");
 
-function guessNumber(name, num) {
+let answer = number.target.value;
+
+let randomNumber = Math.floor(Math.random() * 27);
+
+button.addEventListener("click", function (answer){
+    
+  showGuess.innerText = randomNumber;
+  if (answer === randomNumber) {
+    response.innerText = "Hey, you totally guessed the number! Great job!";
+
+  } else if (answer > randomNumber) {
+    response.innerText = `Sorry, your guess is too high. The number is ${randomNumber} `;
+  } else {
+    response.innerText = "That's not a number. Please try again.";
+  }})
+/*function guessNumber(name, num) {
   var randomNumber = Math.floor(Math.random() * 27); // This will produce a number between 1 and 25 - this line is error free :)
 
   if (num > 26) {
@@ -28,4 +45,4 @@ function guessNumber(name, num) {
   }
 }
 
-guessNumber("Saxby", num);
+guessNumber("Saxby", num); */

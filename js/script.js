@@ -4,12 +4,26 @@ var showGuess = document.querySelector(".show-guess");
 const button = document.querySelector("button");
 const number = document.querySelector(".number");
 
-let answer = number.target.value;
+let answer = number.value;
 
-let randomNumber = Math.floor(Math.random() * 27);
+showGuess.innerText = randomNumber
 
-button.addEventListener("click", function (answer){
-    
+function mysteryNumber(num) {
+
+  let randomNumber = Math.floor(Math.random() * 27);
+
+  if (num > 26) {
+    response.innerText = "We need a number between 1 and 26.";
+    return;
+  } else if (num < 1) {
+    response.innerText = "We need a number between 1 and 26.";
+    return;
+  }
+
+}
+
+button.addEventListener("click", function (answer) {
+
   showGuess.innerText = randomNumber;
   if (answer === randomNumber) {
     response.innerText = "Hey, you totally guessed the number! Great job!";
@@ -18,7 +32,8 @@ button.addEventListener("click", function (answer){
     response.innerText = `Sorry, your guess is too high. The number is ${randomNumber} `;
   } else {
     response.innerText = "That's not a number. Please try again.";
-  }})
+  }
+})
 /*function guessNumber(name, num) {
   var randomNumber = Math.floor(Math.random() * 27); // This will produce a number between 1 and 25 - this line is error free :)
 

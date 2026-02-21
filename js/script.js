@@ -4,6 +4,7 @@ const button = document.querySelector("button");
 const number = document.querySelector(".number");
 let randomNumber = Math.floor(Math.random() * 27);
 const num = number.value;
+const form = document.querySelector("form");
 
 
 const playGame = function (num) {
@@ -22,9 +23,20 @@ const playGame = function (num) {
     response.innerText = "That's not a number. Please try again.";
   }
   showGuess.innerText = randomNumber;
+  const playAgain = document.createElement("button");
+  playAgain.innerText = "Play Again";
+  playAgain.classList.add("play-again");
+  button.classList.add("hidden");
+  form.append(playAgain);
+  
 }
 
 button.addEventListener("click", playGame);
+
+playAgain.addEventListener("click", function() {
+  window.location.reload();
+})
+
 
 
 

@@ -28,12 +28,12 @@ const playGame = function (num) {
   playAgain.classList.add("play-again");
   button.classList.add("hidden");
   form.append(playAgain);
-  
+
 }
 
 button.addEventListener("click", playGame);
 
-playAgain.addEventListener("click", function() {
+playAgain.addEventListener("click", function () {
   window.location.reload();
 })
 
